@@ -30,6 +30,7 @@ public abstract class BasicDAO {
 	private void setup() {
 		try {
 			String dbUrl = String.format(DB_URL, dbHost, dbPort, dbName);
+                        Class.forName("org.postgresql.Driver");
 			logger.log(Level.INFO, String.format("DB URL = %s", dbUrl));
 			connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 		} catch (Exception e) {
